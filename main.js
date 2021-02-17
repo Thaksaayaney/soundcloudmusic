@@ -1,5 +1,5 @@
 SC.initialize({
-    client_id: '340f063c670272fac27cfa67bffcafc4'
+    client_id: '3f7407c6252e6932c8ef6ea85c55e9c7'
 });
 
 $(document).ready(function () {
