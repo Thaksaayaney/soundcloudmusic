@@ -1,41 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sound Cloud Music Player</title>
-    <!--Adding Sound Cloud SDK-->
-    <script src="https://connect.soundcloud.com/sdk.js"></script>
-    <!--Script Files-->
-    <script src='./main.js'></script>
-    <script src="./jquery-3.3.1.js"></script>
-    <script src="./jquery-3.3.1.min.js"></script>
-    <!--Script CDN-->
-    <!-- <script src="https://code.jquery.com/jquery-3.1.1.js"
-        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script> -->
-        <!--Mine-->
-        <!-- <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
-<!-- <script src="exponential.js"></script> -->
+    <title>MUSICO</title>
+    <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/a.css">
 </head>
-
 <body>
-    <button id="start">START</button>
-    <button id="stop">STOP</button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><b>MUSICO</b></a>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="albums.html">ALBUMS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">EVENTS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">NEWS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">CONTACT</a>
+            </li>
+            
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <section class="display">
+        <div class="music-container" id="music-container">
+            <div class="music-info">
+                <h4 id="title"></h4>
+                <div class="progress-container" id="progress-container">
+                    <div class="progress" id="progress"></div>
+                </div>
+            </div>
+            
+            <audio id="audio" src=""></audio>
+            <div class="img-container">
+                <img id="cover" src="" alt="Music Cover Art">
+                <div class="img-container-shadow"></div>
+            </div>
+            <div class="navigation">
+                <button id="prev" class="action-btn">
+                    <i class="fas fa-backward"></i>
+                </button>
+                <button id="play" class="action-btn action-btn-big">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="next" class="action-btn">
+                    <i class="fas fa-forward"></i>
+                </button>
+            </div>
+        </div>
+        <h1>Musico Music Media</h1>
+        <script src="assets/script.js"></script>
+      </section>
+       <!-- ##### Contact Area Start ##### -->
+    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url(img/bg-img/bg-2.jpg);">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <div class="section-heading white">
+                      <h2>Get In Touch</h2>
+                  </div>
+              </div>
+          </div>
 
+          <div class="row">
+              <div class="col-12">
+                  <!-- Contact Form Area -->
+                  <div class="contact-form-area">
+                      <form action="#" method="post">
+                          <div class="row">
+                              <div class="col-md-6 col-lg-4">
+                                  <div class="form-group">
+                                      <input type="text" class="form-control" id="name" placeholder="Name">
+                                  </div>
+                              </div>
+                              <div class="col-md-6 col-lg-4">
+                                  <div class="form-group">
+                                      <input type="email" class="form-control" id="email" placeholder="E-mail">
+                                  </div>
+                              </div>
+                              <div class="col-lg-4">
+                                  <div class="form-group">
+                                      <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                  </div>
+                              </div>
+                              <div class="col-12">
+                                  <div class="form-group">
+                                      <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                  </div>
+                              </div>
+                              <div class="col-12 text-center">
+                                  <button class="btn oneMusic-btn mt-30" type="submit">Send <i class="fa fa-angle-double-right"></i></button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- ##### Contact Area End ##### -->
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+      <div class="container">
+          <div class="row d-flex flex-wrap align-items-center">
+              <div class="col-12 col-md-6">
+                  
+                  <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Musico</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+              </div>
 
-    <script src="https://connect.soundcloud.com/sdk.js"></script>
-    <!--Script CDN-->
-    <script src="https://code.jquery.com/jquery-3.1.1.js"
-        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+              <div class="col-12 col-md-6">
+                  <div class="footer-nav">
+                      <ul>
+                          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                          <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                         
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+  <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+      <script src="assets/a.js"></script>
+      <script src="assets/script.js"></script>
+      <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 </body>
-
 </html>
-
